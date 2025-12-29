@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YouTube 视频下载与格式转换工具 - 简单易用的命令行工具">
+    <title>YouTube 视频下载工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="hero">
+                <h1>📺 YouTube 视频下载与转换工具</h1>
+                <p class="subtitle">简单、快速、高质量的 YouTube 视频下载解决方案</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/darrenhdc/youtube-crawler" class="btn btn-primary" target="_blank">
+                        <svg class="icon" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        查看源码
+                    </a>
+                    <a href="#installation" class="btn btn-secondary">开始使用</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="features">
+                <h2>✨ 功能特点</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>自动下载</h3>
+                        <p>只需提供 YouTube 链接即可自动下载视频</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>批量转换</h3>
+                        <p>下载完成后自动将 webm 格式转换为 mp4 格式</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎬</div>
+                        <h3>高质量</h3>
+                        <p>使用最佳视频和音频质量下载</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>自动覆盖</h3>
+                        <p>转换时自动覆盖已存在的文件</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>错误处理</h3>
+                        <p>完善的错误处理和用户反馈机制</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>命令行界面</h3>
+                        <p>简单易用的命令行参数</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="installation" class="installation">
+                <h2>📦 安装说明</h2>
+                
+                <div class="install-section">
+                    <h3>技术依赖</h3>
+                    <ul class="tech-list">
+                        <li><strong>Python 3</strong> - 推荐 Python 3.7 或更高版本</li>
+                        <li><strong>yt-dlp</strong> - 用于下载 YouTube 视频</li>
+                        <li><strong>ffmpeg</strong> - 用于视频格式转换</li>
+                    </ul>
+                </div>
+
+                <div class="install-steps">
+                    <div class="step">
+                        <h4>步骤 1: 安装 Python 3</h4>
+                        <p>从 <a href="https://www.python.org/downloads/" target="_blank">Python 官网</a> 下载并安装最新版本的 Python 3。</p>
+                    </div>
+
+                    <div class="step">
+                        <h4>步骤 2: 安装 yt-dlp</h4>
+                        <div class="code-block">
+                            <code>pip3 install yt-dlp</code>
+                            <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <h4>步骤 3: 安装 ffmpeg</h4>
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="showTab('macos', event)">macOS</button>
+                            <button class="tab-btn" onclick="showTab('ubuntu', event)">Ubuntu/Debian</button>
+                            <button class="tab-btn" onclick="showTab('windows', event)">Windows</button>
+                        </div>
+                        <div id="macos" class="tab-content active">
+                            <div class="code-block">
+                                <code>brew install ffmpeg</code>
+                                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                            </div>
+                        </div>
+                        <div id="ubuntu" class="tab-content">
+                            <div class="code-block">
+                                <code>sudo apt-get install ffmpeg</code>
+                                <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                            </div>
+                        </div>
+                        <div id="windows" class="tab-content">
+                            <p>从 <a href="https://ffmpeg.org/download.html" target="_blank">ffmpeg 官网</a> 下载，并将 ffmpeg.exe 所在目录添加到系统环境变量 Path 中。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="usage">
+                <h2>🚀 使用方法</h2>
+                
+                <div class="usage-section">
+                    <h3>基本用法</h3>
+                    <div class="code-block">
+                        <code>python3 main.py "YOUTUBE_URL"</code>
+                        <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                    </div>
+                </div>
+
+                <div class="usage-section">
+                    <h3>示例</h3>
+                    <div class="code-block">
+                        <code>python3 main.py "https://www.youtube.com/watch?v=CbZgAvfrYX8"</code>
+                        <button class="copy-btn" onclick="copyCode(this)">复制</button>
+                    </div>
+                </div>
+
+                <div class="notice-box">
+                    <h4>⚠️ 注意事项</h4>
+                    <ul>
+                        <li><strong>URL 必须加引号</strong>：由于 YouTube 链接包含特殊字符（如 <code>?</code> 和 <code>&</code>），必须使用引号将 URL 括起来</li>
+                        <li><strong>下载位置</strong>：下载和转换后的文件将保存在当前目录中</li>
+                        <li><strong>转换后文件</strong>：mp4 文件将与原文件名相同，仅扩展名不同</li>
+                        <li><strong>原文件保留</strong>：默认会保留下载的 webm 文件，可以在脚本中取消注释相关代码以自动删除原文件</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="structure">
+                <h2>📂 脚本结构</h2>
+                <div class="code-block structure-code">
+                    <pre><code>main.py
+├── download_youtube_video(): 使用yt-dlp下载视频
+├── convert_webm_to_mp4(): 转换webm到mp4
+└── main(): 主函数，处理命令行参数和流程控制</code></pre>
+                </div>
+            </section>
+
+            <section class="configuration">
+                <h2>⚙️ 配置选项</h2>
+                <p>你可以根据需要修改脚本中的以下参数：</p>
+                <ul class="config-list">
+                    <li><strong>视频质量</strong>：修改 <code>yt-dlp</code> 命令中的 <code>-f</code> 参数</li>
+                    <li><strong>转换格式</strong>：修改 ffmpeg 命令中的编码参数</li>
+                    <li><strong>自动删除原文件</strong>：取消注释 <code>os.remove(webm_file)</code> 行</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>📄 这个项目采用 MIT 许可证，你可以自由使用和修改。</p>
+                <p>如有任何问题或建议，欢迎在 <a href="https://github.com/darrenhdc/youtube-crawler/issues" target="_blank">GitHub Issues</a> 提出！</p>
+                <p class="footer-links">
+                    <a href="https://github.com/darrenhdc/youtube-crawler" target="_blank">GitHub</a> • 
+                    <a href="https://github.com/darrenhdc/youtube-crawler/issues" target="_blank">反馈</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
