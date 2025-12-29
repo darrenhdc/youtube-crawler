@@ -1,5 +1,5 @@
 // Tab switching functionality
-function showTab(tabId) {
+function showTab(tabId, event) {
     // Hide all tab contents
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => {
@@ -19,8 +19,9 @@ function showTab(tabId) {
     }
 
     // Add active class to the clicked button
-    const activeButton = event.target;
-    activeButton.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
 }
 
 // Copy code functionality
