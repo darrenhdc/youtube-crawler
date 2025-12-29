@@ -2,6 +2,10 @@
 
 这是一个使用 Python 编写的工具，可以从 YouTube 下载视频并自动将其转换为 mp4 格式。该工具结合了 `yt-dlp` 和 `ffmpeg` 的强大功能。
 
+## 🌐 在线文档
+
+访问我们的网站获取更详细的使用说明：[https://darrenhdc.github.io/youtube-crawler/](https://darrenhdc.github.io/youtube-crawler/)
+
 ## 功能特点
 
 - **自动下载**：只需提供 YouTube 链接即可自动下载视频
