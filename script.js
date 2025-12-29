@@ -125,10 +125,3 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
-
-// Add a simple "back to top" button functionality
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        // Could add a back-to-top button here if desired
-    }
-});
